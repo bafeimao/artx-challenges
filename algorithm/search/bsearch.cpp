@@ -4,7 +4,7 @@ using namespace std;
 
 const int N = 100010;
 
-int n, m;
+int n, m,x;
 int q[N];
 
 int main()
@@ -15,13 +15,12 @@ int main()
 
     while (m--)
     {
-        int x;
         scanf("%d", &x);
         int l = 0, r = n - 1;
         while (l < r)
         {
             int mid = l + r >> 1;
-            if (q[mid >= x])
+            if (q[mid] >= x)
                 r = mid;
             else
                 l = mid + 1;
@@ -33,8 +32,7 @@ int main()
         {
             cout << l << ' ';
 
-            int l = 0;
-            r = n - 1;
+            int l = 0, r = n - 1;
             while (l < r)
             {
                 int mid = l + r + 1 >> 1;
